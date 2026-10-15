@@ -1,21 +1,14 @@
-# Use Node.js LTS as base image
-FROM node:18
-
-# Set working directory
+FROM node:22-alpine
+ENV NODE_ENV=production
 WORKDIR /app
 
-# Copy package.json and package-lock.json
+# Dependencies first so this layer is cached between code changes
 COPY package*.json ./
+RUN npm ci --omit=dev --no-audit --no-fund
 
-# Install dependencies
-RUN npm install
+# Only the application source goes into the image
+COPY src ./src
 
-# Copy the rest of the application files
-COPY . .
-
-# Expose the port the backend runs on
+USER node
 EXPOSE 3001
-
-# Start the backend server
 CMD ["node", "src/server.js"]
-
