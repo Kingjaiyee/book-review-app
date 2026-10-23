@@ -12,5 +12,5 @@ npm-debug.log*
 .DS_Store
 
 # Kubernetes: never commit real Secret files
-k8s/*secret*.yaml
-!k8s/02-secret.example.yaml
+k8s/**/*secret*.yaml
+!k8s/examples/secret.example.yaml
