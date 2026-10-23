@@ -8,4 +8,4 @@ data:
   DB_HOST: "mysql"
   DB_PORT: "3306"
   DB_NAME: "book_review_db"
-  ALLOWED_ORIGINS: "http://REPLACE_WITH_FRONTEND_IP"
+  ALLOWED_ORIGINS: "http://57.174.98.245"
