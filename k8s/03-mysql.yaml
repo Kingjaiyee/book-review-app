@@ -89,7 +89,7 @@ spec:
         name: mysql-data
       spec:
         accessModes: ["ReadWriteOnce"]
-        storageClassName: managed-csi
+        storageClassName: standard
         resources:
           requests:
             storage: 5Gi
